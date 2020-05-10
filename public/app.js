@@ -82,6 +82,7 @@ btnAdd.addEventListener("click", addTodo=(e)=>{
       firebase.database().ref('/todos/').push({
       todo: todoValue.value,
     });
+    todoValue.value="";
 
   };
 });
