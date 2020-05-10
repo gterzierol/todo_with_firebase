@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <title>To-Do App</title>
+</head>
+<body>
+  <div class="container">
+
+    <div class="title">
+      <span>Guvenc's To-Do List</span>
+    </div>
+
+    <div class="todo-input">
+
+      <input type="text" class="input">
+      <button type="submit" class="input-button">
+        <i class="fa fa-plus-square"></i>
+      </button>
+
+    </div>
+
+    <div class="todos">
+
+      <li class="todo-items">
+        
+      </li>
+
+    </div>
+    
+  </div>
+  
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCwNndGpDic-RwbaUtIRJTHMnVlsNWE598",
+    authDomain: "todo-54c37.firebaseapp.com",
+    databaseURL: "https://todo-54c37.firebaseio.com",
+    projectId: "todo-54c37",
+    storageBucket: "todo-54c37.appspot.com",
+    messagingSenderId: "1037538431573",
+    appId: "1:1037538431573:web:6d188e3dfe634d871abadc",
+    measurementId: "G-XEMRT9B4K0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  </script>
+  <script src="app.js"></script>
+  
+  
+</body>
+</html>
