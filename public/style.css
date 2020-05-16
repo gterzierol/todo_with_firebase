@@ -30,6 +30,7 @@ body{
 
 }
 
+/* ---Input Area--- */
 .todo-input{
   display: flex;
   justify-content: center;
@@ -48,6 +49,7 @@ body{
   width: 50px;
   align-items: flex-end;
 }
+
 
 .todos{
   margin-top:50px;

@@ -9,6 +9,12 @@ var firebaseConfig = {
   measurementId: "G-XEMRT9B4K0"
 };
 console.log(this)
+const auth = firebase.auth();
+
+// Sign In
+
+auth.signInWithEmailAndPassword(email, pass);
+
 
 //Add Button
 const btnAdd = document.querySelector(".input-button");
@@ -44,11 +50,13 @@ function loadTodo(e){
 }
 
 btnAdd.addEventListener("click", addTodo=(e)=>{
+  
   console.log(e.target.className);
 
   if(e.target.className === "input-button" || e.target.className === "fa fa-plus-square"){
     
-    //create li
+    if(todoValue.value != ""){
+      //create li
     const todoLi = document.createElement("li");
     todoLi.classList.add("todo-items");
     //create div under li
@@ -83,6 +91,28 @@ btnAdd.addEventListener("click", addTodo=(e)=>{
       todo: todoValue.value,
     });
     todoValue.value="";
+    }else{
+      const alertItem = document.createElement("div");
+      alertItem.classList.add("alert", "alert-danger");
+      alertItem.innerHTML ='<span>Lütfen Boş bırakmayın...!</span>';
+      const input = document.querySelector(".todo-input")
+      const title = document.querySelector(".title");
+
+      input.parentNode.insertBefore(alertItem, input);
+      
+      let hideAlert = () => setTimeout(hidden, 5000)
+
+      function hidden(){
+        alertItem.remove();
+      }
+      
+      hideAlert();
+      
+
+      // alert("lütfen boş bırakmayın!");
+    
+    }
+    
 
   };
 });
@@ -92,7 +122,7 @@ todoList.addEventListener("click", deleteCheck = (e) =>{
   const item = e.target
   if(e.target.className === "trash-btn"){
     
-    const todo = item.parentElement;
+    const todo = item.parentElement.parentElement;
     todo.remove();
   }
   if(e.target.className === "completed-btn"){
