@@ -11,22 +11,26 @@ var firebaseConfig = {
 console.log(this)
 const auth = firebase.auth();
 
-// Sign In
-
-auth.signInWithEmailAndPassword(email, pass);
-
-
 //Add Button
 const btnAdd = document.querySelector(".input-button");
 
 //Todo-İtems
+const container = document.querySelector(".container");
 const todoItems = document.querySelectorAll(".todo-items");
-
 const todoValue = document.querySelector(".input");
 const todoList = document.querySelector(".todos");
+const modalLogin = document.querySelector(".form-login");
 
 window.addEventListener("load", loadTodo)
 function loadTodo(e){
+  
+  modalLogin.style = "display: block";
+  container.className += " blur"
+  modalLogin.addEventListener("click", (e) =>{if(e.target.className === "close"){
+    modalLogin.style = "display: none";
+    container.className = "container";
+  }})
+
   console.log(this);
   const database = firebase.database().ref("/todos/").once("value", function (snapshot){    snapshot.forEach(function(childSnapShot)
     {
